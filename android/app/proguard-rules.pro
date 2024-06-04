@@ -1,0 +1,11 @@
+#Flutter Wrapper
+-keep class io.flutter.app.** { *; } 
+-keep class io.flutter.plugin.** { *; } 
+-keep class io.flutter.util.** { *; } 
+-keep class io.flutter.view.** { *; } 
+-keep class io.flutter.** { *; } 
+-keep class io.flutter.plugins.** { *; }
+-keep class org.eclipse.paho.** { *; }
+-keep class com.amazonaws.** { *; }
+-keep class com.google.gson.** { *; }
+-keep class com.example.yourapp.** { *; }
