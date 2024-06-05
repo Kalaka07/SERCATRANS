@@ -22,9 +22,7 @@ class LoginApp extends StatelessWidget {
 class AuthCheck extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Aquí deberías verificar el estado de autenticación
-    bool isLoggedIn =
-        false; // Suponiendo que obtienes este estado de alguna lógica
+    bool isLoggedIn = false;
 
     if (isLoggedIn) {
       return HomePage();

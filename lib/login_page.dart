@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'home_page.dart';
+import 'config.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -33,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     try {
-      final url = Uri.parse('http://localhost:8080/login');
+      final url = Uri.parse('${getServerUrl()}/login');
       final response = await http.post(
         url,
         headers: {'Content-Type': 'application/json'},

@@ -1,11 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'config.dart';
 
 class AuthService with ChangeNotifier {
   Future<void> register(String email, String password) async {
+    final url = Uri.parse('${getServerUrl()}/register');
     final response = await http.post(
-      Uri.parse('http://localhost:8080/register'),
+      url,
       body: json.encode({'email': email, 'password': password}),
       headers: {'Content-Type': 'application/json'},
     );
@@ -17,8 +19,9 @@ class AuthService with ChangeNotifier {
   }
 
   Future<void> login(String email, String password) async {
+    final url = Uri.parse('${getServerUrl()}/login');
     final response = await http.post(
-      Uri.parse('http://localhost:8080/login'),
+      url,
       body: json.encode({'email': email, 'password': password}),
       headers: {'Content-Type': 'application/json'},
     );

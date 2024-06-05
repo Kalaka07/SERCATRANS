@@ -4,7 +4,8 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' show join;
 import 'ImagenDetalladaScreen.dart';
-import 'documents_screen.dart'; // Importa DocumentsScreen para acceder al método addDocument
+import 'documents_screen.dart';
+import 'package:gallery_saver/gallery_saver.dart';
 
 class CameraScreen extends StatefulWidget {
   @override
@@ -81,7 +82,9 @@ class _CameraScreenState extends State<CameraScreen> {
       XFile picture = await _controller!.takePicture();
       await picture.saveTo(path);
 
-      // Crear un nuevo Document
+      await GallerySaver.saveImage(path);
+      print('Imagen guardada en la galería: $path');
+
       final newDocument = Document(
         id: DateTime.now().millisecondsSinceEpoch.toString(),
         imagePath: path,

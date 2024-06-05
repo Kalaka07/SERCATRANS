@@ -76,7 +76,7 @@ class ImageDetailsScreen extends StatelessWidget {
             ),
           ),
           content: Column(
-            mainAxisSize: MainAxisSize.min, // Ajustar al tamaño mínimo
+            mainAxisSize: MainAxisSize.min,
             children: [
               success
                   ? SizedBox(
